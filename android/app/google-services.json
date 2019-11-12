@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "177110925459",
+    "firebase_url": "https://central-medical-records-iws.firebaseio.com",
+    "project_id": "central-medical-records-iws",
+    "storage_bucket": "central-medical-records-iws.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177110925459:android:56fff19a4a890ecf340d66",
+        "android_client_info": {
+          "package_name": "rithvik.medibase1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177110925459-kvn5jqi6fk29uhsmv522t113o2v8m2b5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rithvik.medibase1",
+            "certificate_hash": "1c1761191aa1e401a39a173984ad9751a3aebf8a"
+          }
+        },
+        {
+          "client_id": "177110925459-nok5haslbv9of1mr4339skr2o06r5k2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpsmKfkRWlmvICnu7EVWNw_RWKuRH95Cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177110925459-nok5haslbv9of1mr4339skr2o06r5k2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
