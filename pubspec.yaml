@@ -24,6 +24,7 @@ dependencies:
   firebase_auth: ^0.14.0+8
   cloud_firestore: ^0.12.10
   google_sign_in: ^4.0.12
+  bottom_navy_bar: ^5.2.2
 #  rxdart: 0.22.0
 #
 #  firebase_core: ^0.2.5+1
@@ -78,12 +79,12 @@ flutter:
           weight: 600
         - asset: assets/fonts/WorkSans-Bold.ttf
           weight: 700
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Bold.ttf
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Medium.ttf
-          weight: 400
+#    - family: Roboto
+#      fonts:
+#        - asset: assets/fonts/Roboto-Bold.ttf
+#        - asset: assets/fonts/Roboto-Regular.ttf
+#        - asset: assets/fonts/Roboto-Medium.ttf
+#          weight: 400
 
   # To add assets to your application, add an assets section, like this:
   # assets:

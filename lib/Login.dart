@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medibase1/appTheme.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,19 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
+    print("Started APP");
     super.initState();
+    if (FirebaseAuth.instance.currentUser() != null) {
+      print("signed in");
+//      Timer.run(() {
+//        Navigator.push(
+//          context,
+//          MaterialPageRoute(
+//              builder: (context) => NavigationHomeScreen()),
+//        );
+//      });
+    }
+
   }
 
   @override

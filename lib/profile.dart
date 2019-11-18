@@ -1,6 +1,7 @@
 import 'package:medibase1/appTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  String unique_id;
+  final databaseReference = Firestore.instance;
   @override
   void initState() {
     super.initState();
@@ -90,7 +93,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+
+                        },
                         child: Center(
                           child: Padding(
                             padding: const EdgeInsets.all(0.0),
@@ -140,10 +145,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         future: FirebaseAuth.instance.currentUser(),
         builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
           if (snapshot.hasData) {
-            return Text(
+            return Text("ID: "+
                 snapshot.data.uid,
                 style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: AppTheme.lightText)
             );//snapshot.data.uid);
@@ -175,6 +180,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+//
+//  void getData() {
+//    databaseReference
+//        .collection("Patients")
+//        .document(unique_id)
+//        .
+//
+////        .((QuerySnapshot snapshot) {
+////      snapshot.documents.forEach((f) => print("HELOOOOOOOOOOOOOOOOO"+'${f.documentID}}'));
+////    });
+//  }
 }
 
 class Pdetails extends StatelessWidget {
@@ -209,4 +225,5 @@ class Pdetails extends StatelessWidget {
     );
   }
 }
+
 

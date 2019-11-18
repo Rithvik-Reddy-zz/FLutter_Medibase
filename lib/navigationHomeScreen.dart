@@ -7,25 +7,37 @@ import 'package:flutter/material.dart';
 import 'package:medibase1/profile.dart';
 import 'package:medibase1/Aboutpage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'medical_history.dart';
+
 
 
 class NavigationHomeScreen extends StatefulWidget {
+
   @override
   _NavigationHomeScreenState createState() => _NavigationHomeScreenState();
 }
 
 class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
  // StateModel appState;
+  String unique_identity="NULL";
   Widget screenView;
   DrawerIndex drawerIndex;
   AnimationController sliderAnimationController;
 
   @override
   void initState() {
+    unique_identity=getuid();
     drawerIndex = DrawerIndex.HOME;
     screenView = MyHomePage();
     super.initState();
   }
+
+  String getuid(){
+    FirebaseAuth.instance.currentUser().then((user) {
+      unique_identity = user.uid;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -65,7 +77,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.MedHistory) {
         setState(() {
-          screenView = FeedbackScreen();
+          screenView = ListPage(title: "Your Previous Visits",);
         });}
       else if (drawerIndex == DrawerIndex.Profile) {
         setState(() {
@@ -91,6 +103,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         future: FirebaseAuth.instance.currentUser(),
         builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
           if (snapshot.hasData) {
+          //  unique_identity=snapshot.data.uid)
             return Text(snapshot.data.uid);
           }
           else {
@@ -100,6 +113,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       ),
     );
   }
+
 
 //  Widget _buildContent(BuildContext context) {
 //    if (appState.isLoading) {

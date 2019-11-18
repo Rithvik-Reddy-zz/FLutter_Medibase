@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: AppTheme.textTheme,
-        platform: TargetPlatform.android,
+        platform: TargetPlatform.iOS,
       ),
       home:LoginScreen()
     );
