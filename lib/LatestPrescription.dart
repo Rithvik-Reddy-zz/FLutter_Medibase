@@ -1,18 +1,18 @@
 //import 'lesson_model.dart';
-import 'Api_Model.dart';
 import 'package:flutter/material.dart';
 //import 'prescription.dart';
+import 'Api_Model.dart';
 import 'appTheme.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'medical_history.dart';
 
-class DetailPage extends StatelessWidget {
+class Latestprescription extends StatelessWidget {
 
 
   final Lesson lesson;
 
-  DetailPage({Key key, this.lesson}) : super(key: key);
+  Latestprescription({Key key, this.lesson}) : super(key: key);
 
 
   @override
@@ -49,14 +49,14 @@ class DetailPage extends StatelessWidget {
             color: AppTheme.awesomeblue,
             size: 40,
           ),
-          Tile_elements(title: prescription.medication,value: prescription.type,)],
+            Tile_elements(title: prescription.medication,value: prescription.type,)],
         ),
-        Divider(
-          indent: 20,
-          endIndent: 20,
-          color: AppTheme.lightText,
-          thickness: 1,
-        ),
+          Divider(
+            indent: 20,
+            endIndent: 20,
+            color: AppTheme.lightText,
+            thickness: 1,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
@@ -86,14 +86,14 @@ class DetailPage extends StatelessWidget {
     );
 
     final makeBody = Container(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: lesson.prescription.length,
-              itemBuilder: (BuildContext context, int index) {
-                return makeCard(lesson.prescription[index]);
-              },
-            ),
+      child: ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        itemCount: lesson.prescription.length,
+        itemBuilder: (BuildContext context, int index) {
+          return makeCard(lesson.prescription[index]);
+        },
+      ),
       // decoration: BoxDecoration(color: Color.fromRGBO(58, 66, 86, 1.0)),
     );
 
@@ -116,11 +116,8 @@ class DetailPage extends StatelessWidget {
     );
 
 
-    return Scaffold(
-      appBar: topContent,
-      body: makeBody,
-    )
-    ;
+    return makeBody;
+
   }
 }
 
@@ -138,10 +135,10 @@ class Tile_elements extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8.0),

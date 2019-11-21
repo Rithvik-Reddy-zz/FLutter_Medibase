@@ -1,4 +1,5 @@
-import 'lesson_model.dart';
+//import 'lesson_model.dart';
+import 'Api_Model.dart';
 import 'package:flutter/material.dart';
 import 'prescription.dart';
 import 'appTheme.dart';
@@ -31,7 +32,7 @@ class Symptoms extends StatelessWidget {
     );
 
 
-    Card makeCard(String symptom) => Card(
+    Card makeCard(Problems symptom) => Card(
       elevation: 0.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5.0),
@@ -43,7 +44,7 @@ class Symptoms extends StatelessWidget {
       margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       child: Container(
         decoration: BoxDecoration(color: Colors.white),
-        child: makeListTile(symptom),
+        child: makeListTile(symptom.symptom),
       ),
     );
 
@@ -51,9 +52,9 @@ class Symptoms extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
-        itemCount: lesson.list_of_symptoms.length,
+        itemCount: lesson.problems.length,
         itemBuilder: (BuildContext context, int index) {
-          return makeCard(lesson.list_of_symptoms[index]);
+          return makeCard(lesson.problems[index]);
         },
       ),
 

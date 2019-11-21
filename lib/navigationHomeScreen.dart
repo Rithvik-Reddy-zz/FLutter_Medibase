@@ -89,7 +89,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         });
       } else if (drawerIndex == DrawerIndex.About) {
         setState(() {
-          screenView = FeedbackScreen();
+          screenView = AboutPage();
         });
       } else {
         //do in your way......

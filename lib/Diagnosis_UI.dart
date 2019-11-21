@@ -1,5 +1,6 @@
-import 'lesson_model.dart';
+//import 'lesson_model.dart';
 import 'package:flutter/material.dart';
+import 'Api_Model.dart';
 import 'diagnosis.dart';
 import 'prescription.dart';
 import 'appTheme.dart';
@@ -28,7 +29,7 @@ class diagnosis_report extends StatelessWidget {
         children: <Widget>[ListTile(
           contentPadding: EdgeInsets.all(20),
 
-          title: Center(child: Text(lesson.diagnosis.condition,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 30))),
+          title: Center(child: Text(lesson.diagnosis[0].condition,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 30))),
         ),
     SizedBox(
     height: 30,
@@ -37,7 +38,7 @@ class diagnosis_report extends StatelessWidget {
         title: Center(child: Text("ADVICE")),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 8.0),
-          child: Text(lesson.diagnosis.advice),
+          child: Text(lesson.diagnosis[0].advice),
         ),
         
       ),

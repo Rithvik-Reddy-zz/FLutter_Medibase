@@ -10,6 +10,7 @@ class AppTheme {
   static const Color grey = Color(0xFF3A5160);
   static const Color dark_grey = Color(0xFF313A44);
   static const Color awesomeblue = Color(0xFF459CAB);
+  static const Color drawerblue = Color(0xFF6BAFB1);
   static const Color darkText = Color(0xFF253840);
   static const Color darkerText = Color(0xFF17262A);
   static const Color lightText = Color(0xFF93B2B6);
@@ -58,10 +59,10 @@ class AppTheme {
 
   static const TextStyle subtitle = TextStyle( // subtitle2 -> subtitle
     fontFamily: fontName,
-    fontWeight: FontWeight.w400,
-    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
     letterSpacing: -0.04,
-    color: darkText,
+    color: darkerText,
   );
 
   static const TextStyle body2 = TextStyle( // body1 -> body2

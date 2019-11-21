@@ -2,6 +2,7 @@ import 'package:medibase1/appTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Api_method.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -94,7 +95,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       color: Colors.transparent,
                       child: InkWell(
                         onTap: () {
-
+                            print("Hello");
+                            datainput();
                         },
                         child: Center(
                           child: Padding(
@@ -146,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         builder: (context, AsyncSnapshot<FirebaseUser> snapshot) {
           if (snapshot.hasData) {
             return Text("ID: "+
-                snapshot.data.uid,
+                snapshot.data.email,
                 style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,

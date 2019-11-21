@@ -25,27 +25,30 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
               height: MediaQuery.of(context).size.height,
               child: Column(
                 children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).padding.top,
-                        left: 16,
-                        right: 16),
-                    child: Image.asset("assets/images/feedbackImage.png"),
-                  ),
+                  SizedBox(
+                height: 100,
+              ),
+//                  Container(
+//                    padding: EdgeInsets.only(
+//                        top: MediaQuery.of(context).padding.top,
+//                        left: 16,
+//                        right: 16),
+//                    child: Image.asset("assets/images/feedbackImage.png"),
+//                  ),
                   Container(
                     padding: EdgeInsets.only(top: 8),
                     child: Text(
                       'Your FeedBack',
                       style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 16),
+                    padding: EdgeInsets.only(top: 80,bottom: 20),
                     child: Text(
-                      "Give your best time for this moment.",
+                      "What can we improve upon?",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
@@ -54,18 +57,18 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   ),
                   _buildComposer(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 16),
+                    padding: const EdgeInsets.only(top: 20),
                     child: Center(
                       child: Container(
                         width: 120,
                         height: 40,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: AppTheme.awesomeblue,
                           borderRadius:
                               BorderRadius.all(Radius.circular(4.0)),
                           boxShadow: <BoxShadow>[
                             BoxShadow(
-                                color: Colors.grey.withOpacity(0.6),
+                                color: Colors.grey.withOpacity(0.5),
                                 offset: Offset(4, 4),
                                 blurRadius: 8.0),
                           ],
@@ -112,7 +115,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           borderRadius: new BorderRadius.circular(8),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.grey.withOpacity(0.8),
+                color: Colors.grey.withOpacity(0.5),
                 offset: Offset(4, 4),
                 blurRadius: 8),
           ],
@@ -121,7 +124,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
           borderRadius: new BorderRadius.circular(25),
           child: Container(
             padding: EdgeInsets.all(4.0),
-            constraints: BoxConstraints(minHeight: 80, maxHeight: 160),
+            constraints: BoxConstraints(minHeight:150, maxHeight: 230),
             color: AppTheme.white,
             child: SingleChildScrollView(
               padding:

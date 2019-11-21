@@ -1,4 +1,4 @@
-import 'lesson_model.dart';
+//import 'lesson_model.dart';
 import 'package:flutter/material.dart';
 import 'prescription.dart';
 import 'appTheme.dart';
@@ -7,6 +7,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:medibase1/Details_list.dart';
 import 'Symptoms.dart';
 import 'Diagnosis_UI.dart';
+import 'Api_Model.dart';
 
 class PatientDetails extends StatefulWidget {
   final Lesson lesson;
@@ -19,7 +20,7 @@ class PatientDetails extends StatefulWidget {
 }
 
 class _PatientDetailsState extends State<PatientDetails> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   PageController _pageController;
   Lesson lesson;
   _PatientDetailsState(this.lesson);
@@ -28,8 +29,9 @@ class _PatientDetailsState extends State<PatientDetails> {
 
   @override
   void initState() {
-    _pageController = PageController();
     super.initState();
+    _pageController = PageController();
+
 
   }
 
