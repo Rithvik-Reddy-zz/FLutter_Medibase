@@ -70,7 +70,7 @@ class Years {
 
 class Lesson {
   String instituteName;
-  int dateOfVisit;
+  String dateOfVisit;
   List<Problems> problems;
   List<Diagnosis> diagnosis;
   List<Prescription> prescription;
